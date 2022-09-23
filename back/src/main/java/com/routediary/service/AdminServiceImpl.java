@@ -115,9 +115,7 @@ public class AdminServiceImpl implements AdminService {
     try {
       serviceFunctions.transferFilesToTempFolder(noticeNo, Dto.NOTICE);
       noticeRepository.update(notice);
-      if (imgFiles != null) {
-        serviceFunctions.saveImages(noticeNo, Dto.NOTICE, imgFiles);
-      }
+      serviceFunctions.saveImages(noticeNo, Dto.NOTICE, imgFiles);
       serviceFunctions.removeTempFiles(noticeNo, Dto.NOTICE);
     } catch (Exception e) {
       serviceFunctions.transferFilesToOriginalFolder(noticeNo, Dto.NOTICE);

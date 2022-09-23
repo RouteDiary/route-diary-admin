@@ -14,7 +14,8 @@ $(() => {
 
       success: () => {
         alert("로그인 성공");
-        location.href = "/";
+        // location.href = "/front/html/a_index.html";
+        window.location.href = "a_index.html";
       },
 
       error: (jqXHR) => {

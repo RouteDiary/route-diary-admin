@@ -2,12 +2,15 @@
 .metadata/
 back/.mvn/src/main/webapp/resource
 front/src/main/webapp/resource
+Servers/
+
 ### Java ###
 # Compiled class file
 *.class
 
 # Log file
 *.log
+log_info.txt
 
 # BlueJ files
 *.ctxt
@@ -22,6 +25,7 @@ front/src/main/webapp/resource
 *.zip
 *.tar.gz
 *.rar
+*.gz
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
@@ -126,3 +130,47 @@ back/.classpath
 
 back/src/main/webapp/WEB-INF/web.xml
 
+
+# not admin project
+back/src/main/java/com/routediary/control/ClientController.java
+
+front/src/main/webapp/html/client_check.html
+front/src/main/webapp/html/client_update.html
+front/src/main/webapp/html/diary_board.html
+front/src/main/webapp/html/diary_modify.html
+front/src/main/webapp/html/diary_write.html
+front/src/main/webapp/html/index.html
+front/src/main/webapp/html/login.html
+front/src/main/webapp/html/logout.html
+front/src/main/webapp/html/my_diary_board.html
+front/src/main/webapp/html/notice_list.html
+front/src/main/webapp/html/signup.html
+front/src/main/webapp/html/view_diary.html
+front/src/main/webapp/html/view_notice.html
+
+front/src/main/webapp/css/client_check.css
+front/src/main/webapp/css/client_update.css
+front/src/main/webapp/css/diary_board.css
+front/src/main/webapp/css/diary_modify.css
+front/src/main/webapp/css/diary_write.css
+front/src/main/webapp/css/index.css
+front/src/main/webapp/css/login.css
+front/src/main/webapp/css/my_diary_board.css
+front/src/main/webapp/css/notice_list.css
+front/src/main/webapp/css/signup.css
+front/src/main/webapp/css/view_diary.css
+front/src/main/webapp/css/view_notice.css
+
+front/src/main/webapp/js/client_check.js
+front/src/main/webapp/js/client_update.js
+front/src/main/webapp/js/diary_board.js
+front/src/main/webapp/js/diary_modify.js
+front/src/main/webapp/js/diary_write.js
+front/src/main/webapp/js/index.js
+front/src/main/webapp/js/login.js
+front/src/main/webapp/js/logout.js
+front/src/main/webapp/js/my_diary_board.js
+front/src/main/webapp/js/notice_list.js
+front/src/main/webapp/js/signup.js
+front/src/main/webapp/js/view_diary.js
+front/src/main/webapp/js/view_notice.js

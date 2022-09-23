@@ -57,7 +57,7 @@ $(() => {
     // 변수선언끝
 
     $.ajax({
-      url: `${backPath}/admin/diary/list/` + order + "/" + pageNo,
+      url: `${backPath}/admin/diary/list/` + order + `/` + pageNo,
       method: "get",
       data: hashtagsObj,
       dataType: "json",
@@ -73,9 +73,7 @@ $(() => {
             '<a class="nav-link write-diary" data-value="DiaryWrite" href="a_notice_write.html" >공지사항 작성하기</a>';
           $("li.nav-item.write-diary").html(diaryWriteHtml);
           let logoutHtml =
-            '<a class="nav-link logout" data-value="Logout" href="' +
-            `${backPath}/admin/logout` +
-            ">로그아웃</a>";
+            '<a class="nav-link logout" data-value="Logout" href="a_logout.html">로그아웃</a>';
           $("li.nav-item.login").html(logoutHtml);
         }
         //nav bar end
@@ -101,7 +99,7 @@ $(() => {
         //다이어리 불러오기
         $(jsonObj.t.posts).each((index, item) => {
           let $copyObj = $tdObj.clone(); // tdObj의 복제본 만들기
-          let $imgObj = $copyObj.find("img");
+          // let $imgObj = $copyObj.find("img");
 
           let diaryNo = item.diaryNo;
           $copyObj.on("click", () => {

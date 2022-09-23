@@ -1,12 +1,13 @@
-.board_view {
-  width: 100%;
-  border-top: 2px solid #000;
-}
-
 .diary .title {
+  margin: 30px;
   padding: 20px 15px;
   border-bottom: 1px dashed #ddd;
   font-size: 2rem;
+}
+
+.like_view {
+  margin: 30px;
+  height: 20px;
 }
 
 .diary .info {
@@ -51,16 +52,36 @@
   color: #777;
 }
 
-.diary .cont {
-  padding: 15px;
-  border-bottom: 1px solid #000;
-  line-height: 160%;
-  font-size: 1.4rem;
+.images .image {
+  margin: 30px;
 }
 
-.day h2 {
-  position: absolute;
-  margin-left: 200px;
+.routes .route {
+  margin: 30px;
+  border-style: groove;
+}
+
+.hashtag {
+  margin: 30px;
+}
+
+.comments .comment {
+  margin: 30px;
+  border-style: groove;
+}
+
+.comment_view {
+  margin: 30px;
+  height: 1px;
+}
+
+.return {
+  margin: 30px;
+  height: 1px;
+}
+
+.diary_delete {
+  margin: 30px;
 }
 
 .navbar {

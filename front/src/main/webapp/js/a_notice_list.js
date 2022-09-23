@@ -18,9 +18,7 @@ $(() => {
             '<a class="nav-link write-diary" data-value="DiaryWrite" href="a_notice_write.html" >공지사항 작성하기</a>';
           $("li.nav-item.write-diary").html(diaryWriteHtml);
           let logoutHtml =
-            '<a class="nav-link logout" data-value="Logout" href="' +
-            `${backPath}/admin/logout` +
-            ">로그아웃</a>";
+            '<a class="nav-link logout" data-value="Logout" href="a_logout.html">로그아웃</a>';
           $("li.nav-item.login").html(logoutHtml);
         }
         //nav bar end
@@ -41,7 +39,7 @@ $(() => {
           noticeWritingDate = noticeWritingDate.toLocaleDateString();
 
           $noticeCopy.on("click", () => {
-            location.href = "./view_notice.html?noticeNo=" + notices.noticeNo;
+            location.href = "./a_view_notice.html?noticeNo=" + notices.noticeNo;
           });
           $noticeCopy.find("th.notice_th").html(notices.noticeNo);
           $noticeCopy.find("td.notice_td1").html(notices.noticeTitle);
@@ -91,48 +89,43 @@ $(() => {
   }
   showNotice(`${backPath}/notice/list/1`);
 
-  $("div.pagegroup").on("click", "span:not(.disabled)", () => {
-    let pageNo = 1;
+  $("div.pagegroup").on("click", "span:not(.disabled)", (e) => {
+    // let pageNo = 1;
+    let pageNo = $(e.target).html();
     let totalPage = $("#last1").html();
-    if ($(this).hasClass("prev")) {
-      pageNo = parseInt($(this).next().html()) - 1;
+    if ($(e.target).hasClass("prev")) {
+      pageNo = parseInt($(e.target).next().html()) - 1;
       console.log("prev:" + pageNo);
-    } else if ($(this).hasClass("next")) {
-      pageNo = parseInt($(this).prev().html()) + 1;
+    } else if ($(e.target).hasClass("next")) {
+      pageNo = parseInt($(e.target).prev().html()) + 1;
       console.log("next:" + pageNo);
-    } else if ($(this).hasClass("first")) {
+    } else if ($(e.target).hasClass("first")) {
       pageNo = 1;
       console.log("first:" + pageNo);
-    } else if ($(this).hasClass("end")) {
+    } else if ($(e.target).hasClass("end")) {
       pageNo = totalPage;
       console.log(pageNo);
     } else {
-      pageNo = parseInt($(this).html());
+      pageNo = parseInt($(e.target).html());
       console.log(pageNo);
     }
 
     let keyword = $("input[name=keyword]").val().trim();
     console.log("keyword:" + keyword);
     let url = "";
-    // if (keyword == "") {
     url = `${backPath}/notice/list/` + pageNo;
-    // } else {
-    // url = `${backPath}/notice/list/` + keyword + "/" + pageNo;
-    // }
     showNotice(url);
     return false;
   });
   //페이징 처리 끝
   $("div.search>div.searchInput>a").click(() => {
-    let keyword = $("div.search>div.searchInput>input[name=keyword]")
-      .val()
-      .trim();
-    // let url = `${backPath}/notice/list` + "/" + keyword + "/1";
+    let keyword = $("input[name=keyword]").val().trim();
+    console.log(keyword);
     let url = "";
     if (keyword == "") {
       url = `${backPath}/notice/list/` + pageNo;
     } else {
-      url = `${backPath}/back/notice/list/` + keyword + "/" + 1;
+      url = `${backPath}/notice/list/` + keyword + "/" + 1;
     }
     showNotice(url);
     return false;

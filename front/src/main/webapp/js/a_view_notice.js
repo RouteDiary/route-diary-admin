@@ -16,9 +16,7 @@ $(() => {
           '<a class="nav-link write-diary" data-value="DiaryWrite" href="a_notice_write.html" >공지사항 작성하기</a>';
         $("li.nav-item.write-diary").html(diaryWriteHtml);
         let logoutHtml =
-          '<a class="nav-link logout" data-value="Logout" href="' +
-          `${backPath}/admin/logout` +
-          ">로그아웃</a>";
+          '<a class="nav-link logout" data-value="Logout" href="a_logout.html">로그아웃</a>';
         $("li.nav-item.login").html(logoutHtml);
       }
       //nav bar end
@@ -59,7 +57,7 @@ $(() => {
             let url = URL.createObjectURL(responseData);
             let $imgObj = $copyImageObj.find("img.notice_image");
             $imgObj.attr("src", url);
-            $imgObj.attr("style", "height:100vw");
+            $imgObj.attr("style", "width:300px");
             $imgObj.attr("alt", "공지사항이미지");
           },
           error: (jqXHR) => {},
