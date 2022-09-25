@@ -36,7 +36,11 @@ $(() => {
       // 사진은 구현예정임.
     },
     error: (jqXHR) => {
-      alert(jqXHR.status);
+      if (jqXHR.status == 500) {
+        alert("서버 오류 : " + jqXHR.status);
+      } else {
+        alert(jqXHR.status + "오류 : " + jqXHR.responseJSON.message);
+      }
     },
   });
 
@@ -81,7 +85,11 @@ $(() => {
         location.href = "./a_notice_list.html";
       },
       error: (jqXHR) => {
-        alert("에러:" + jqXHR.status);
+      if (jqXHR.status == 500) {
+        alert("서버 오류 : " + jqXHR.status);
+      } else {
+        alert(jqXHR.status + "오류 : " + jqXHR.responseJSON.message);
+      }
       },
     });
     return false;

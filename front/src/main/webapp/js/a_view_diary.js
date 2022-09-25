@@ -77,8 +77,6 @@ $(() => {
               $imgObj.attr("alt", "다이어리이미지");
             },
             error: function (jqXHR) {
-              //응답실패
-              alert("이미지 다운로드 에러:" + jqXHR.status);
             },
           });
           $("div.images").append($copyImageObj);
@@ -177,7 +175,11 @@ $(() => {
       }
     },
     error: (jqXHR) => {
-      alert("오류:" + jqXHR.status);
+      if (jqXHR.status == 500) {
+        alert("서버 오류 : " + jqXHR.status);
+      } else {
+        alert(jqXHR.status + "오류 : " + jqXHR.responseJSON.message);
+      }
     },
   });
 
@@ -208,7 +210,11 @@ $(() => {
         }
       },
       error: (jqXHR) => {
-        alert("에러:" + jqXHR.status);
+      if (jqXHR.status == 500) {
+        alert("서버 오류 : " + jqXHR.status);
+      } else {
+        alert(jqXHR.status + "오류 : " + jqXHR.responseJSON.message);
+      }
       },
     });
     return false;
@@ -233,7 +239,11 @@ $(() => {
         }
       },
       error: (jqXHR) => {
-        alert("에러:" + jqXHR.status);
+      if (jqXHR.status == 500) {
+        alert("서버 오류 : " + jqXHR.status);
+      } else {
+        alert(jqXHR.status + "오류 : " + jqXHR.responseJSON.message);
+      }
       },
     });
     return false;

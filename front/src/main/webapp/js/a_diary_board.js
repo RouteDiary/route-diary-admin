@@ -155,7 +155,11 @@ $(() => {
         $tdObj.hide();
       },
       error: (jqXHR) => {
-        alert("에러 : " + jqXHR.status);
+      if (jqXHR.status == 500) {
+        alert("서버 오류 : " + jqXHR.status);
+      } else {
+        alert(jqXHR.status + "오류 : " + jqXHR.responseJSON.message);
+      }
       },
     });
   }

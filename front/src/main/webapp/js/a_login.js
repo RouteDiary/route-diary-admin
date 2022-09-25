@@ -19,11 +19,11 @@ $(() => {
       },
 
       error: (jqXHR) => {
-        if (jqXHR.status == 400) {
-          alert(jqXHR.responseJSON.message);
-        } else {
-          alert("알 수 없는 에러[" + jqXHR.status + "]");
-        }
+      if (jqXHR.status == 500) {
+        alert("서버 오류 : " + jqXHR.status);
+      } else {
+        alert(jqXHR.status + "오류 : " + jqXHR.responseJSON.message);
+      }
       },
     });
     return false;
